@@ -2,7 +2,7 @@
 
 Zwölftes Stück der **Matching-Linie** der "Konzepte"-Reihe für die Website "Sebastian Hanisch – Operations Research und Machine Learning", dritte von vier Erweiterungen des Gale-Shapley-Asts (nach [stabile-mitbewohner-demo](https://github.com/sebastian-hanisch/stabile-mitbewohner-demo) und [krankenhaus-zulassung-demo](https://github.com/sebastian-hanisch/krankenhaus-zulassung-demo)) – inspiriert von Alvin Roths Arbeiten zu Marktdesign ohne Geld.
 
-**Gale-Shapley und Krankenhaus-Zulassung** paaren Bewerber mit Anbietern (zwei Seiten). Hier besitzt **jeder schon etwas** und tauscht direkt: strukturell ein echter Bruch, kein Deferred-Acceptance-Verwandter. Gales Algorithmus (in Shapley & Scarf 1974, "The Core of an N Person Game") löst den **Wohnungsmarkt**: n Beschäftigte besitzen bereits einen festen Dauerparkplatz, jeder ordnet ALLE Plätze nach Entfernung zum eigenen Ziel (keine Reichweite, keine unvollständigen Listen wie in jedem bisherigen Stück). Top Trading Cycles findet die eindeutige **kernstabile** Zuordnung – und ist der einzige Mechanismus, der gleichzeitig Pareto-effizient, individuell-rational UND strategiefest ist (Ma 1994). Direkter algorithmischer Unterbau für **Nierentausch**, das nächste und letzte geplante Stück.
+**Gale-Shapley und Krankenhaus-Zulassung** paaren Bewerber mit Anbietern (zwei Seiten). Hier besitzt **jeder schon etwas** und tauscht direkt: strukturell ein echter Bruch, kein Deferred-Acceptance-Verwandter. Gales Algorithmus (in Shapley & Scarf 1974, "The Core of an N Person Game") löst den **Wohnungsmarkt**: n Beschäftigte besitzen bereits einen festen Dauerparkplatz, jeder ordnet ALLE Plätze nach Entfernung zum eigenen Ziel (keine Reichweite, keine unvollständigen Listen wie in jedem bisherigen Stück). Top Trading Cycles findet die eindeutige **kernstabile** Zuordnung – und ist der einzige Mechanismus, der gleichzeitig Pareto-effizient, individuell-rational UND strategiefest ist (Ma 1994). Direkter algorithmischer Unterbau für [nierentausch-demo](https://github.com/sebastian-hanisch/nierentausch-demo), das letzte Stück der Linie – inzwischen ebenfalls gebaut.
 
 ```
 greedy-matching-demo (Wurzel: eine gewählte Zuordnung bleibt)                     [gebaut]
@@ -11,7 +11,7 @@ greedy-matching-demo (Wurzel: eine gewählte Zuordnung bleibt)                  
   │    ├─ stabile-mitbewohner-demo (eine Gruppe statt zwei Seiten)                 [gebaut]
   │    ├─ krankenhaus-zulassung-demo (many-to-one, Kapazitäten)                    [gebaut]
   │    └─ top-trading-cycles-demo (Tausch ohne Geld, Wohnungsmarkt)                [dieses Stück]
-  │         └─ Nierentausch (Kompatibilität statt Präferenz, kurze Zyklen)         [geplant]
+  │         └─ nierentausch-demo (Kompatibilität statt Präferenz, kurze Zyklen)    [gebaut]
   └─ online-matching-demo (Aufträge kommen nacheinander)                          [gebaut]
 ```
 

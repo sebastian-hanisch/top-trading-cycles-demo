@@ -4,7 +4,7 @@ Sebastian Hanisch - Operations Research und Machine Learning
 Dritte Erweiterung des Gale-Shapley-Asts der Matching-Linie, aber strukturell ein echter Bruch: kein
 Deferred-Acceptance-Verwandter. Gales Algorithmus (Shapley & Scarf 1974) löst den Wohnungsmarkt: jeder besitzt schon
 genau ein Gut und hat eine VOLLSTÄNDIGE Präferenz über alle Güter. Der direkte algorithmische Unterbau für
-Nierentausch (nächstes und letztes geplantes Stück). Siehe README.
+Nierentausch (letztes Stück der Matching-Linie, inzwischen gebaut). Siehe README.
 
 Lauffähig mit: streamlit run app.py
 """
@@ -84,7 +84,7 @@ strategiefest zugleich ist (Ma 1994).
 )
 st.caption(
     "Drittes von vier neuen Stücken der Matching-Linie (nach Stabile Mitbewohner und Krankenhaus-Zulassung), "
-    "inspiriert von Alvin Roths Marktdesign-Arbeiten. Der direkte algorithmische Unterbau für das nächste, letzte Stück: Nierentausch."
+    "inspiriert von Alvin Roths Marktdesign-Arbeiten. Der direkte algorithmische Unterbau für das letzte Stück der Linie: Nierentausch (inzwischen gebaut)."
 )
 
 with st.expander("So funktioniert Top Trading Cycles", expanded=True):
@@ -273,10 +273,10 @@ st.markdown(
 |---|---|---|
 | **Vollständige Präferenzen** (kein Erreichbarkeits-Cutoff) | Reale Tauschbörsen kennen oft nur einen Teil der möglichen Partner. | (außerhalb der Linie) |
 | **Strikte Präferenzen** | Bei echten Gleichständen ist TTC weder pareto-effizient noch gruppen-anreizkompatibel. | (außerhalb der Linie) |
-| **Freier Tausch, keine Kompatibilitäts-/Kurzzyklus-Zwänge** | Nierenspenden brauchen medizinische Kompatibilität UND kurze Zyklen (Simultan-OPs) oder Ketten (altruistische Spender). | **Nierentausch** (geplant, letztes Stück) |
+| **Freier Tausch, keine Kompatibilitäts-/Kurzzyklus-Zwänge** | Nierenspenden brauchen medizinische Kompatibilität UND kurze Zyklen (Simultan-OPs) oder Ketten (altruistische Spender). | **Nierentausch** (gebaut, letztes Stück) |
 """
 )
-st.caption("Damit bleibt in der erweiterten Matching-Linie noch Nierentausch offen.")
+st.caption("Damit ist die Matching-Linie mit Nierentausch als letztem Stück vollständig gebaut.")
 
 st.markdown("---")
 
