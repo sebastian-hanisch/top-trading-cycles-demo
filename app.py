@@ -16,7 +16,7 @@ import streamlit as st
 
 import tt_constants as C
 import tt_evaluation as ev
-from tt_presets import apply_preset, bounds, init_session_state_defaults, load_permalink_settings, randomize_seed, sync_query_params
+from tt_presets import KEPT, apply_preset, bounds, init_session_state_defaults, load_permalink_settings, randomize_seed, sync_query_params, seed_widget
 from tt_ttc import EV_ADVANCE, EV_CYCLE, EV_POINT
 from tt_visualization import build_cap_preview, build_length_hist, build_map, build_progress, build_scale
 
@@ -118,14 +118,18 @@ with st.sidebar:
     card = st.session_state.get("card_select", C.CARD_NONE)
     if card == C.CARD_NONE:
         pref = st.radio("Vorlieben", list(C.PREF_LABELS), key="pref_radio", format_func=lambda k: C.PREF_LABELS[k])
+        seed_widget("noise_slider")
         noise = st.slider("Streuung [min]", *bounds("noise_slider"), key="noise_slider", step=C.NOISE_STEP) if pref == "noise" else C.DEFAULT_NOISE
+        seed_widget("n_slider")
         n = st.slider("Personen", *bounds("n_slider"), key="n_slider")
+        seed_widget("ballung_slider")
         ballung = st.slider("Ballung [%]", *bounds("ballung_slider"), key="ballung_slider", step=25)
+        seed_widget("seed_input")
         seed = st.number_input("Zufalls-Seed", *bounds("seed_input"), key="seed_input", step=1)
         st.button("🎲 Neue Karte generieren", width="stretch", on_click=randomize_seed)
     else:
-        pref, noise, ballung, seed = st.session_state.get("pref_radio", C.DEFAULT_PREF), C.DEFAULT_NOISE, C.DEFAULT_BALLUNG, st.session_state.get("seed_input", C.DEFAULT_SEED)
-        n = st.session_state.get("n_slider", C.DEFAULT_N)
+        pref, noise, ballung, seed = st.session_state.get("pref_radio", C.DEFAULT_PREF), C.DEFAULT_NOISE, C.DEFAULT_BALLUNG, st.session_state.get("seed_input", st.session_state.get(KEPT["seed_input"], C.DEFAULT_SEED))
+        n = st.session_state.get("n_slider", st.session_state.get(KEPT["n_slider"], C.DEFAULT_N))
         st.caption(f"Feste Karte ({C.CARD_LABELS[card]}) - es gibt nichts zu erzeugen.")
 
 # --- Ablauf --------------------------------------------------------------------------------------------------------
